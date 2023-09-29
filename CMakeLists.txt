@@ -1,9 +1,9 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+CMAKE_MINIMUM_REQUIRED(VERSION#3.1)
 
 PROJECT(TBTK)
 
 EXECUTE_PROCESS(
-	COMMAND git rev-parse --short HEAD
+	COMMAND#git rev-parse --short HEAD
 	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 	OUTPUT_VARIABLE TBTK_VERSION_GIT_HASH
 	OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -16,7 +16,7 @@ LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake/Modules/")
 INCLUDE(TBTKVersionInfo)
 INCLUDE(TBTKBuildOptions)
 
-#Detect packages
+ Detect packages
 FIND_PACKAGE(BLAS QUIET REQUIRED)
 FIND_PACKAGE(LAPACK QUIET REQUIRED)
 FIND_PACKAGE(HDF5 QUIET)
@@ -517,7 +517,7 @@ INSTALL(
 INSTALL(
 	DIRECTORY ${TBTK_BINARY_DIR}/CMake/Modules
 	DESTINATION ${ConfigPackageLocation}
-	FILES_MATCHING PATTERN *.cmake
+	FILES_MATCHING PATTERN  .cmake
 )
 
 #MESSAGE("Installation path that will be used if installed: ${CMAKE_INSTALL_PREFIX}")
@@ -545,3 +545,4 @@ IF(UNIX)
 	MESSAGE("further instructions.")
 	MESSAGE("================================================================================\n")
 ENDIF(UNIX)
+ 
