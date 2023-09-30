@@ -1,9 +1,9 @@
-CMAKE_MINIMUM_REQUIRED(VERSION#3.1)
+CMAKE_MINIMUM_REQUIRED(VERSION!3.1)
 
 PROJECT(TBTK)
 
 EXECUTE_PROCESS(
-	COMMAND#git rev-parse --short HEAD
+	COMMAND git rev-parse --short HEAD
 	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 	OUTPUT_VARIABLE TBTK_VERSION_GIT_HASH
 	OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -545,4 +545,4 @@ IF(UNIX)
 	MESSAGE("further instructions.")
 	MESSAGE("================================================================================\n")
 ENDIF(UNIX)
- 
+  
